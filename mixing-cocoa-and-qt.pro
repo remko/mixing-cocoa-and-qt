@@ -1,3 +1,7 @@
+TEMPLATE = app
+
+QT += widgets
+
 HEADERS += \
 	$$PWD/AutoUpdater.h
 
@@ -14,6 +18,10 @@ mac {
 		$$PWD/SparkleAutoUpdater.mm \
 		$$PWD/CocoaInitializer.mm
 	
+	QMAKE_LFLAGS += -F.
+	QMAKE_CXXFLAGS += -F.
+	QMAKE_CFLAGS += -F.
+	QMAKE_OBJECTIVE_CFLAGS += -F.
 	LIBS += -framework Sparkle -framework AppKit
 
 	# FIXME: Stopped working. Need to fix this.

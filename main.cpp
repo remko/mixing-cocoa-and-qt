@@ -5,7 +5,7 @@
 #include <QApplication>
 #include <QLabel>
 
-#ifdef Q_WS_MAC
+#ifdef Q_OS_MAC
 #include "CocoaInitializer.h"
 #include "SparkleAutoUpdater.h"
 #endif
@@ -17,7 +17,7 @@ int main(int argc, char* argv[])
 	l.show();
 
 	AutoUpdater* updater;
-#ifdef Q_WS_MAC
+#ifdef Q_OS_MAC
 	CocoaInitializer initializer;
 	updater = new SparkleAutoUpdater("http://el-tramo.be/files/blog/mixing-cocoa-and-qt/appcast.xml");
 #endif
