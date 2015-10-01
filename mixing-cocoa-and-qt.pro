@@ -24,8 +24,7 @@ mac {
 	QMAKE_OBJECTIVE_CFLAGS += -F.
 	LIBS += -framework Sparkle -framework AppKit
 
-	# FIXME: Stopped working. Need to fix this.
-	#QMAKE_INFO_PLIST = Info.plist
+        QMAKE_INFO_PLIST = Info.plist
         QMAKE_POST_LINK = mkdir -p mixing-cocoa-and-qt.app/Contents/Frameworks && \
             rm -rf mixing-cocoa-and-qt.app/Contents/Frameworks/Sparkle.framework && \
             cp -avf /Library/Frameworks/Sparkle.framework mixing-cocoa-and-qt.app/Contents/Frameworks
